@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="SkillConnect dashboard for managing freelancers and bookings."
+    >
+
+    <title>Dashboard | SkillConnect</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+
+        <div class="container navbar">
+
+            <a href="index.html" class="logo" aria-label="SkillConnect Home">
+                Skill<span>Connect</span>
+            </a>
+
+            <nav class="nav-links" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="freelancers.html">Find Freelancers</a>
+                <a href="bookings.html">Bookings</a>
+                <a href="dashboard.html" class="active">Dashboard</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button
+                    type="button"
+                    id="logoutButton"
+                    class="btn btn-secondary"
+                >
+                    Logout
+                </button>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main class="dashboard-page">
+
+        <section class="dashboard-hero">
+
+            <div class="container">
+
+                <p class="eyebrow">
+                    YOUR WORKSPACE
+                </p>
+
+                <h1>
+                    Welcome back, <span id="userName">User</span>!
+                </h1>
+
+                <p>
+                    Manage your freelancers, bookings, and projects from one place.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="dashboard-content">
+
+            <div class="container">
+
+                <!-- Statistics -->
+                <div class="stats-grid">
+
+                    <article class="dashboard-stat-card">
+
+                        <span class="dashboard-stat-icon">
+                            👥
+                        </span>
+
+                        <div>
+                            <p>Total Freelancers</p>
+                            <strong id="totalFreelancers">0</strong>
+                        </div>
+
+                    </article>
+
+
+                    <article class="dashboard-stat-card">
+
+                        <span class="dashboard-stat-icon">
+                            📅
+                        </span>
+
+                        <div>
+                            <p>Active Bookings</p>
+                            <strong id="activeBookings">0</strong>
+                        </div>
+
+                    </article>
+
+
+                    <article class="dashboard-stat-card">
+
+                        <span class="dashboard-stat-icon">
+                            ✓
+                        </span>
+
+                        <div>
+                            <p>Completed Projects</p>
+                            <strong id="completedBookings">0</strong>
+                        </div>
+
+                    </article>
+
+
+                    <article class="dashboard-stat-card">
+
+                        <span class="dashboard-stat-icon">
+                            🧩
+                        </span>
+
+                        <div>
+                            <p>Skill Categories</p>
+                            <strong id="totalCategories">0</strong>
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <!-- Quick Actions -->
+                <section class="dashboard-section">
+
+                    <div class="section-title-row">
+
+                        <div>
+                            <p class="eyebrow">
+                                QUICK ACTIONS
+                            </p>
+
+                            <h2>
+                                What would you like to do?
+                            </h2>
+                        </div>
+
+                    </div>
+
+
+                    <div class="quick-actions">
+
+                        <a href="freelancers.html" class="quick-action-card">
+
+                            <span>🔎</span>
+
+                            <div>
+                                <h3>Browse Freelancers</h3>
+                                <p>
+                                    Discover skilled professionals for your project.
+                                </p>
+                            </div>
+
+                        </a>
+
+
+                        <a href="bookings.html" class="quick-action-card">
+
+                            <span>📋</span>
+
+                            <div>
+                                <h3>Manage Bookings</h3>
+                                <p>
+                                    View and manage your upcoming projects.
+                                </p>
+                            </div>
+
+                        </a>
+
+                    </div>
+
+                </section>
+
+
+                <!-- Recent Activity -->
+                <section class="dashboard-section">
+
+                    <div class="section-title-row">
+
+                        <div>
+                            <p class="eyebrow">
+                                RECENT ACTIVITY
+                            </p>
+
+                            <h2>
+                                Your latest bookings
+                            </h2>
+                        </div>
+
+                        <a href="bookings.html" class="text-link">
+                            View all →
+                        </a>
+
+                    </div>
+
+
+                    <div
+                        id="recentBookings"
+                        class="recent-bookings"
+                    >
+                        <!-- Dynamic bookings will appear here -->
+                    </div>
+
+                </section>
+
+
+                <!-- Analytics -->
+                <section class="dashboard-section">
+
+                    <div class="section-title-row">
+
+                        <div>
+                            <p class="eyebrow">
+                                ANALYTICS
+                            </p>
+
+                            <h2>
+                                Booking overview
+                            </h2>
+                        </div>
+
+                    </div>
+
+
+                    <div class="charts-grid">
+
+                        <div class="chart-card">
+
+                            <h3>
+                                Booking Status
+                            </h3>
+
+                            <canvas
+                                id="bookingStatusChart"
+                                aria-label="Booking status chart"
+                                role="img"
+                            ></canvas>
+
+                        </div>
+
+
+                        <div class="chart-card">
+
+                            <h3>
+                                Freelancer Categories
+                            </h3>
+
+                            <canvas
+                                id="categoryChart"
+                                aria-label="Freelancer categories chart"
+                                role="img"
+                            ></canvas>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="js/storage.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>

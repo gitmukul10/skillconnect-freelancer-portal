@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Log in to SkillConnect and manage your freelancer bookings."
+    >
+
+    <title>Login | SkillConnect</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container navbar">
+
+            <a href="index.html" class="logo" aria-label="SkillConnect Home">
+                Skill<span>Connect</span>
+            </a>
+
+            <nav class="nav-links" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="freelancers.html">Find Freelancers</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="register.html" class="btn btn-primary">
+                    Get Started
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+
+    <main class="auth-page">
+
+        <section class="auth-section">
+
+            <div class="auth-card">
+
+                <div class="auth-header">
+
+                    <p class="eyebrow">
+                        WELCOME BACK
+                    </p>
+
+                    <h1>Login to SkillConnect</h1>
+
+                    <p>
+                        Continue managing your projects and connecting with
+                        talented freelancers.
+                    </p>
+
+                </div>
+
+
+                <form id="loginForm" novalidate>
+
+                    <div class="form-group">
+
+                        <label for="loginEmail">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="loginEmail"
+                            name="email"
+                            autocomplete="email"
+                            required
+                            placeholder="Enter your email"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="loginPassword">
+                            Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="loginPassword"
+                            name="password"
+                            autocomplete="current-password"
+                            required
+                            placeholder="Enter your password"
+                        >
+
+                    </div>
+
+
+                    <p
+                        id="loginMessage"
+                        class="form-message"
+                        aria-live="polite"
+                    ></p>
+
+
+                    <button type="submit" class="btn btn-primary auth-submit">
+                        Login
+                    </button>
+
+                </form>
+
+
+                <p class="auth-switch">
+                    Don't have an account?
+                    <a href="register.html">Create one here</a>
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/storage.js"></script>
+    <script src="js/auth.js"></script>
+
+</body>
+</html>

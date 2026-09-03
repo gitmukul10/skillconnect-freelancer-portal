@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Create and manage your freelancer project bookings on SkillConnect."
+    >
+
+    <title>Bookings | SkillConnect</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+
+        <div class="container navbar">
+
+            <a href="index.html" class="logo" aria-label="SkillConnect Home">
+                Skill<span>Connect</span>
+            </a>
+
+            <nav class="nav-links" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="freelancers.html">Find Freelancers</a>
+                <a href="bookings.html" class="active">Bookings</a>
+                <a href="dashboard.html">Dashboard</a>
+            </nav>
+
+            <div class="nav-actions">
+
+                <button
+                    type="button"
+                    id="logoutButton"
+                    class="btn btn-secondary"
+                >
+                    Logout
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main class="bookings-page">
+
+        <!-- Hero -->
+        <section class="bookings-hero">
+
+            <div class="container">
+
+                <p class="eyebrow">
+                    PROJECT BOOKINGS
+                </p>
+
+                <h1>
+                    Manage your projects and collaborations.
+                </h1>
+
+                <p>
+                    Create new bookings, track project progress, and manage
+                    your work with talented freelancers.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="bookings-section">
+
+            <div class="container">
+
+                <!-- Booking Form -->
+                <div class="booking-form-card">
+
+                    <div class="booking-form-header">
+
+                        <div>
+
+                            <p class="eyebrow">
+                                NEW BOOKING
+                            </p>
+
+                            <h2>
+                                Start a new project
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <form id="bookingForm" novalidate>
+
+                        <div class="booking-form-grid">
+
+                            <!-- Freelancer -->
+                            <div class="form-group">
+
+                                <label for="bookingFreelancer">
+                                    Select Freelancer
+                                </label>
+
+                                <select
+                                    id="bookingFreelancer"
+                                    required
+                                >
+                                    <option value="">
+                                        Select a freelancer
+                                    </option>
+                                </select>
+
+                            </div>
+
+
+                            <!-- Project Title -->
+                            <div class="form-group">
+
+                                <label for="projectTitle">
+                                    Project Title
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="projectTitle"
+                                    required
+                                    placeholder="Example: E-commerce Website"
+                                >
+
+                            </div>
+
+
+                            <!-- Start Date -->
+                            <div class="form-group">
+
+                                <label for="projectStartDate">
+                                    Start Date
+                                </label>
+
+                                <input
+                                    type="date"
+                                    id="projectStartDate"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <!-- Budget -->
+                            <div class="form-group">
+
+                                <label for="projectBudget">
+                                    Project Budget ($)
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="projectBudget"
+                                    required
+                                    min="1"
+                                    placeholder="Example: 500"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Description -->
+                        <div class="form-group">
+
+                            <label for="projectDescription">
+                                Project Description
+                            </label>
+
+                            <textarea
+                                id="projectDescription"
+                                required
+                                rows="5"
+                                placeholder="Describe what you need help with..."
+                            ></textarea>
+
+                        </div>
+
+
+                        <p
+                            id="bookingMessage"
+                            class="form-message"
+                            aria-live="polite"
+                        ></p>
+
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary"
+                        >
+                            Create Booking
+                        </button>
+
+                    </form>
+
+                </div>
+
+
+                <!-- Booking List -->
+                <section class="booking-list-section">
+
+                    <div class="section-title-row">
+
+                        <div>
+
+                            <p class="eyebrow">
+                                YOUR BOOKINGS
+                            </p>
+
+                            <h2>
+                                Manage active projects
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="bookingsList"
+                        class="bookings-list"
+                    >
+                        <!-- Dynamic bookings -->
+                    </div>
+
+                </section>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/storage.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/bookings.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>

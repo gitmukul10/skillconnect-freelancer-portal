@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Create a SkillConnect account and start finding talented freelancers."
+    >
+
+    <title>Create Account | SkillConnect</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container navbar">
+
+            <a href="index.html" class="logo" aria-label="SkillConnect Home">
+                Skill<span>Connect</span>
+            </a>
+
+            <nav class="nav-links" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="freelancers.html">Find Freelancers</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-secondary">
+                    Login
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+
+    <main class="auth-page">
+
+        <section class="auth-section">
+
+            <div class="auth-card">
+
+                <div class="auth-header">
+
+                    <p class="eyebrow">
+                        JOIN SKILLCONNECT
+                    </p>
+
+                    <h1>Create your account</h1>
+
+                    <p>
+                        Start discovering talented freelancers and managing
+                        your projects in one place.
+                    </p>
+
+                </div>
+
+
+                <form id="registerForm" novalidate>
+
+                    <div class="form-group">
+
+                        <label for="registerName">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="registerName"
+                            name="name"
+                            autocomplete="name"
+                            required
+                            minlength="2"
+                            placeholder="Enter your full name"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="registerEmail">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="registerEmail"
+                            name="email"
+                            autocomplete="email"
+                            required
+                            placeholder="Enter your email"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="registerPassword">
+                            Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="registerPassword"
+                            name="password"
+                            autocomplete="new-password"
+                            required
+                            minlength="6"
+                            placeholder="Minimum 6 characters"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="confirmPassword">
+                            Confirm Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            name="confirmPassword"
+                            autocomplete="new-password"
+                            required
+                            minlength="6"
+                            placeholder="Re-enter your password"
+                        >
+
+                    </div>
+
+
+                    <p
+                        id="registerMessage"
+                        class="form-message"
+                        aria-live="polite"
+                    ></p>
+
+
+                    <button type="submit" class="btn btn-primary auth-submit">
+                        Create Account
+                    </button>
+
+                </form>
+
+
+                <p class="auth-switch">
+                    Already have an account?
+                    <a href="login.html">Login here</a>
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/storage.js"></script>
+    <script src="js/auth.js"></script>
+
+</body>
+</html>
